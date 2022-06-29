@@ -10,6 +10,9 @@ services:
         - type: bind
           source: /opt/docker-compose/redis-sentinel
           target: /usr/local/etc/redis
+        - type: bind
+          source: /var/lib/docker-redis/redis1
+          target: /data/
         networks:
           redis-cluster-net:
             ipv4_address: 172.28.5.11
@@ -25,6 +28,9 @@ services:
         - type: bind
           source: /opt/docker-compose/redis-sentinel
           target: /usr/local/etc/redis
+        - type: bind
+          source: /var/lib/docker-redis/redis2
+          target: /data/
         networks:
           redis-cluster-net:
             ipv4_address: 172.28.5.12
@@ -40,6 +46,9 @@ services:
         - type: bind
           source: /opt/docker-compose/redis-sentinel
           target: /usr/local/etc/redis
+        - type: bind
+          source: /var/lib/docker-redis/redis3
+          target: /data/
         networks:
           redis-cluster-net:
             ipv4_address: 172.28.5.13
